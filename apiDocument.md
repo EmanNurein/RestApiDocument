@@ -67,6 +67,34 @@
         "cost":"1200"
         }
 
+# Rest login Api part
+
+# GetAllUser
+(GET)> http://localhost:5000/api/auth/users
+
+# Register
+(POST)> http://localhost:5000/api/auth/register
+(body) =>  {
+            "name":"Nada",
+            "email":"nada@gmail.com",
+            "password":"nada2022",
+            "phone":"91222212",
+            "role":"user"
+            }
+
+# Login
+(POST) => http://localhost:5000/api/auth/login
+(body)  =>  {
+                "email":"nada@gmail.com",
+                "password":"nada2022"
+            }
+(response)=> {auth:true,token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZ'}
+
+# UserInfo
+(GET) => http://localhost:5000/api/auth/userinfo
+(Header) => {'x-access-token':'token value from login'}
+
+
 
 
 
